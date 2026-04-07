@@ -11,7 +11,7 @@ export default function ResumeHeader() {
         className="button button-primary"
         type="button"
         href={
-          'https://raw.githubusercontent.com/YassirSellami/personal-site/refs/heads/main/resume-en.pdf'
+          'https://github.com/YassirSellami/personal-site/releases/download/v1/resume-en.pdf'
         }
         target={'_blank'}
       >
