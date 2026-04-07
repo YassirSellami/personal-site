@@ -32,19 +32,21 @@ export default function ContactPage() {
 
           <ContactIcons />
 
-          <div className="contact-divider">
-            <span>or add my contact with</span>
-          </div>
+          <div className="contact-qrcode-container">
+            <div className="contact-divider">
+              <span>or add my contact with</span>
+            </div>
 
-          <div className={'qrcode'}>
-            {/* biome-ignore lint/performance/noImgElement: Using native img to avoid next/image runtime overhead for static export */}
-            <img
-              src="/images/qrcode.png"
-              alt="Use contacts above instead"
-              width={400}
-              loading={'lazy'}
-              decoding="async"
-            />
+            <div className={'qrcode'}>
+              {/* biome-ignore lint/performance/noImgElement: Using native img to avoid next/image runtime overhead for static export */}
+              <img
+                src="/images/qrcode.png"
+                alt="Use contacts above instead"
+                width={400}
+                loading={'lazy'}
+                decoding="async"
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -3,7 +3,6 @@ import Link from 'next/link';
 import PageWrapper from '@/components/Template/PageWrapper';
 import contributions from '@/data/contributions';
 import { createPageMetadata } from '@/lib/metadata';
-import { getAllPosts } from '@/lib/posts';
 import { formatDate } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -70,15 +69,6 @@ function ContributionsItem({ item, showDate = true }: ContributionsItemProps) {
 
 export default function ContributionsPage() {
   // Get internal posts from markdown files
-  const internalPosts = getAllPosts();
-  const internalItems: UnifiedItem[] = internalPosts.map((post) => ({
-    title: post.title,
-    url: `/contributions/${post.slug}`,
-    authors: post.authors,
-    date: post.date,
-    description: post.description,
-    isExternal: false,
-  }));
 
   // Get external articles from data file
   const externalItems: UnifiedItem[] = contributions.map((item) => ({
@@ -87,7 +77,7 @@ export default function ContributionsPage() {
   }));
 
   // Merge and sort all items
-  const allItems = [...internalItems, ...externalItems];
+  const allItems = [...externalItems];
   const dated = allItems
     .filter((item) => item.date)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
