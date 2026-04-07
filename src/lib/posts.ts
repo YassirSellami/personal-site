@@ -6,6 +6,7 @@ import matter from 'gray-matter';
 export interface PostFrontmatter {
   title: string;
   date: string;
+  authors: string[];
   description: string;
   draft?: boolean;
 }
@@ -14,12 +15,13 @@ export interface Post {
   slug: string;
   title: string;
   date: string;
+  authors: string[];
   description: string;
   content: string;
   draft?: boolean;
 }
 
-const postsDirectory = path.join(process.cwd(), 'content/writing');
+const postsDirectory = path.join(process.cwd(), 'content/contributions');
 
 export function getPostSlugs(): string[] {
   if (!fs.existsSync(postsDirectory)) {
@@ -46,6 +48,7 @@ export function getPostBySlug(slug: string): Post | null {
     slug,
     title: frontmatter.title,
     date: frontmatter.date,
+    authors: frontmatter.authors,
     description: frontmatter.description,
     content,
     draft: frontmatter.draft,

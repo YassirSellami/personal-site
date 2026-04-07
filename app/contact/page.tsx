@@ -8,7 +8,7 @@ import { createPageMetadata } from '@/lib/metadata';
 
 export const metadata: Metadata = createPageMetadata({
   title: 'Contact',
-  description: "Contact Michael D'Angelo via email @ hi@mldangelo.com",
+  description: 'Contact Yassir Sellami via email @ hi@ysellami.com',
   path: '/contact/',
 });
 
@@ -31,6 +31,20 @@ export default function ContactPage() {
           </div>
 
           <ContactIcons />
+
+          <div className="contact-divider">
+            <span>or add my contact with</span>
+          </div>
+
+          <div className={'qrcode'}>
+            <img
+              src="/images/qrcode.png"
+              alt="Use contacts above instead"
+              width={400}
+              loading={'lazy'}
+              decoding="async"
+            />
+          </div>
         </div>
       </section>
     </PageWrapper>

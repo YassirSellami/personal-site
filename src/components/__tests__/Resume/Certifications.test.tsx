@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import Courses from '../../Resume/Courses';
-import Course from '../../Resume/Courses/Course';
+import Certifications from '../../Resume/Certifications';
+import Certification from '../../Resume/Certifications/Certification';
 
-const mockCourses = [
+const mockCertifications = [
   {
     title: 'Machine Learning',
     number: 'CS 229',
@@ -25,82 +25,82 @@ const mockCourses = [
   },
 ];
 
-describe('Courses', () => {
-  it('renders the courses section with title', () => {
-    render(<Courses data={mockCourses} />);
+describe('Certifications', () => {
+  it('renders the certifications section with title', () => {
+    render(<Certifications data={mockCertifications} />);
 
     expect(
-      screen.getByRole('heading', { name: /selected courses/i }),
+      screen.getByRole('heading', { name: /certifications/i }),
     ).toBeInTheDocument();
   });
 
-  it('renders all courses', () => {
-    render(<Courses data={mockCourses} />);
+  it('renders all certifications', () => {
+    render(<Certifications data={mockCertifications} />);
 
     expect(screen.getByText('Machine Learning')).toBeInTheDocument();
     expect(screen.getByText('Deep Learning')).toBeInTheDocument();
     expect(screen.getByText('Algorithms')).toBeInTheDocument();
   });
 
-  it('renders course numbers', () => {
-    render(<Courses data={mockCourses} />);
+  it('renders certification numbers', () => {
+    render(<Certifications data={mockCertifications} />);
 
     expect(screen.getByText(/CS 229/)).toBeInTheDocument();
     expect(screen.getByText(/CS 230/)).toBeInTheDocument();
     expect(screen.getByText(/CS 161/)).toBeInTheDocument();
   });
 
-  it('renders courses as list items', () => {
-    render(<Courses data={mockCourses} />);
+  it('renders certifications as list items', () => {
+    render(<Certifications data={mockCertifications} />);
 
     const list = screen.getByRole('list');
     expect(list).toBeInTheDocument();
 
     const items = screen.getAllByRole('listitem');
-    expect(items.length).toBe(mockCourses.length);
+    expect(items.length).toBe(mockCertifications.length);
   });
 
-  it('sorts courses by university then number', () => {
-    render(<Courses data={mockCourses} />);
+  it('sorts certifications by university then number', () => {
+    render(<Certifications data={mockCertifications} />);
 
     const items = screen.getAllByRole('listitem');
-    // Stanford courses should come before MIT (reverse alpha)
+    // Stanford certifications should come before MIT (reverse alpha)
     // And within Stanford, sorted by number
     expect(items.length).toBe(3);
   });
 
   it('has anchor link for navigation', () => {
-    render(<Courses data={mockCourses} />);
+    render(<Certifications data={mockCertifications} />);
 
-    const anchor = document.getElementById('courses');
+    const anchor = document.getElementById('certifications');
     expect(anchor).toBeInTheDocument();
   });
 });
 
-describe('Course', () => {
-  const mockCourse = {
+describe('Certification', () => {
+  const mockCertification = {
     title: 'Machine Learning',
     number: 'CS 229',
     link: 'http://cs229.stanford.edu/',
     university: 'Stanford',
   };
 
-  it('renders course number and title', () => {
-    render(<Course data={mockCourse} />);
+  it('renders certification number and title', () => {
+    render(<Certification data={mockCertification} />);
 
     expect(screen.getByText(/CS 229/)).toBeInTheDocument();
     expect(screen.getByText('Machine Learning')).toBeInTheDocument();
   });
 
-  it('renders course as link', () => {
-    render(<Course data={mockCourse} />);
+  it('renders certification as link', () => {
+    render(<Certification data={mockCertification} />);
 
     const link = screen.getByRole('link');
-    expect(link).toHaveAttribute('href', mockCourse.link);
+    expect(link).toHaveAttribute('href', mockCertification.link);
   });
 
   it('renders as list item', () => {
-    render(<Course data={mockCourse} />);
+    render(<Certification data={mockCertification} />);
 
     const item = screen.getByRole('listitem');
     expect(item).toBeInTheDocument();

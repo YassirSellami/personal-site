@@ -7,8 +7,21 @@ import routes from '@/data/routes';
 
 import Hamburger from './Hamburger';
 import ThemeToggle from './ThemeToggle';
+import { MoonIcon, SunIcon } from '@/components/Icons';
+import { useEffect, useState } from 'react';
 
 export default function Navigation() {
+  const [isDark, setIsDark] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const stored = window.localStorage.getItem('theme');
+    if (stored === 'light' || stored === 'dark') {
+      setIsDark(stored === 'dark');
+    } else {
+      setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches);
+    }
+  }, []);
+
   const pathname = usePathname();
 
   const isActive = (path: string) => {
@@ -19,7 +32,14 @@ export default function Navigation() {
   return (
     <header className="site-header">
       <Link href="/" className="site-logo">
-        <span className="logo-text">MD</span>
+        <img
+          className={'site-logo logo-text'}
+          src={'/images/logo.png'}
+          alt="YS"
+          width={100}
+          loading={'lazy'}
+          decoding="async"
+        />
       </Link>
 
       <nav className="nav-links">

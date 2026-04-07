@@ -256,12 +256,10 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
   color: var(--color-fg-light);
   font-size: var(--text-sm);
   max-width: 280px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1.5rem auto;
 }
 
 .contact-divider::before,
@@ -301,6 +299,11 @@
 .contact-content > .icons li a:hover {
   background: var(--color-accent-light);
   color: var(--color-accent);
+}
+
+.contact-content .qrcode {
+  width: 300px;
+  margin: auto;
 }
 
 @media (max-width: 736px) {

@@ -11,7 +11,6 @@
 
   /* Portrait image */
   .theme-portrait {
-    display: inline-block;
     position: relative;
     line-height: 0;
   }
@@ -277,11 +276,49 @@
   color: var(--color-fg-light);
 }
 
+.jobs-container {
+  .tech-chips {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.25rem;
+  }
+
+  .tech-chip {
+    font-size: var(--text-xs);
+    padding: 0.4rem 0.8rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-fg);
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    transition:
+            background var(--duration-fast) var(--ease-out),
+            border-color var(--duration-fast) var(--ease-out),
+            transform var(--duration-fast) var(--ease-out);
+  }
+
+  .tech-chip:hover {
+    background: var(--color-accent-subtle);
+    border-color: var(--color-accent-border);
+    transform: translateY(-1px);
+  }
+}
+
+.jobs-container .project-name {
+  font-size: var(--text-md);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-fg-light);
+  text-decoration: underline;
+}
+
 .daterange {
   font-size: var(--text-sm);
   letter-spacing: var(--tracking-tight);
   color: var(--color-fg-light);
   margin-bottom: 0.5em;
+  float: right;
 }
 
 .summary {
@@ -335,14 +372,14 @@
 }
 
 /* ========================================
-   COURSE CARDS
+   CERTIFICATION CARDS
    ======================================== */
 
-.course-container {
+.certification-container {
   display: block;
 }
 
-.course-container a {
+.certification-container a {
   display: block;
   padding: 1rem 1.25rem;
   background: var(--color-surface-subtle);
@@ -352,13 +389,13 @@
   transition: all var(--duration-fast) var(--ease-out);
 }
 
-.course-container a:hover {
+.certification-container a:hover {
   border-color: var(--color-border);
   background: var(--color-surface-hover);
   transform: translateY(var(--lift-sm));
 }
 
-.courses .course-number {
+.certifications .certification-number {
   display: block;
   font-size: var(--text-sm);
   font-weight: var(--font-weight-bold);
@@ -366,7 +403,45 @@
   margin-bottom: 0.25rem;
 }
 
-.courses .course-name {
+.certifications .certification-name {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-fg);
+}
+
+
+/* ========================================
+   LANGUAGE CARDS
+   ======================================== */
+
+.language-container {
+  display: block;
+  width: 140px;
+  padding: 1rem 1.25rem;
+  background: var(--color-bg-offset);
+  border: 1px solid var(--color-border-bg);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.language-container:hover {
+  border-color: var(--color-border);
+  background: var(--color-surface-hover);
+  transform: translateY(var(--lift-sm));
+}
+
+.language-proficiency {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+}
+
+.language-name {
   display: block;
   font-family: var(--font-sans);
   font-size: var(--text-base);

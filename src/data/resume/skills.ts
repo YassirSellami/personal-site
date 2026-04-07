@@ -11,12 +11,69 @@ export interface Category {
   textColor: 'dark' | 'light';
 }
 
-const skills: Skill[] = [
-  // Languages
+const skills: Skill[] = [];
+
+// Web Development
+const webDev: Skill[] = [
   {
-    title: 'Python',
+    title: 'Node.js',
     competency: 5,
-    category: ['Languages', 'ML Engineering'],
+    category: ['Web Development'],
+  },
+  {
+    title: 'Spring Webflux',
+    competency: 3,
+    category: ['Web Development'],
+  },
+  {
+    title: 'Spring',
+    competency: 4,
+    category: ['Web Development'],
+  },
+  {
+    title: 'NestJS',
+    competency: 4,
+    category: ['Web Development'],
+  },
+  {
+    title: 'VueJs',
+    competency: 4,
+    category: ['Web Development'],
+  },
+  {
+    title: 'Angular',
+    competency: 3,
+    category: ['Web Development'],
+  },
+  {
+    title: 'MicroFront',
+    competency: 3,
+    category: ['Web Development'],
+  },
+  {
+    title: 'NextJS',
+    competency: 3,
+    category: ['Web Development'],
+  },
+  {
+    title: 'Storybook',
+    competency: 3,
+    category: ['Web Development'],
+  },
+
+  {
+    title: 'React',
+    competency: 3,
+    category: ['Web Development'],
+  },
+];
+
+// Languages
+const languages: Skill[] = [
+  {
+    title: 'Java',
+    competency: 4,
+    category: ['Languages', 'Web Development'],
   },
   {
     title: 'TypeScript',
@@ -24,105 +81,201 @@ const skills: Skill[] = [
     category: ['Languages', 'Web Development'],
   },
   {
-    title: 'SQL',
-    competency: 4,
-    category: ['Languages', 'Databases'],
-  },
-  // AI & LLM
-  {
-    title: 'AI Agents',
+    title: 'Javascript',
     competency: 5,
-    category: ['ML Engineering'],
+    category: ['Languages', 'Web Development'],
   },
   {
-    title: 'LLM Evaluation',
-    competency: 5,
-    category: ['ML Engineering'],
-  },
-  {
-    title: 'AI Red-teaming',
-    competency: 5,
-    category: ['ML Engineering'],
-  },
-  {
-    title: 'LLM APIs',
-    competency: 5,
-    category: ['ML Engineering'],
-  },
-  {
-    title: 'RAG',
-    competency: 4,
-    category: ['ML Engineering'],
-  },
-  {
-    title: 'Prompt Engineering',
-    competency: 4,
-    category: ['ML Engineering'],
-  },
-  {
-    title: 'Vector Databases',
-    competency: 4,
-    category: ['ML Engineering', 'Databases'],
-  },
-  {
-    title: 'PyTorch',
-    competency: 4,
-    category: ['ML Engineering'],
-  },
-  {
-    title: 'Pandas',
-    competency: 5,
-    category: ['ML Engineering', 'Data Engineering'],
-  },
-  // Web Development
-  {
-    title: 'Node.js',
-    competency: 5,
-    category: ['Web Development'],
-  },
-  {
-    title: 'FastAPI',
-    competency: 4,
-    category: ['Web Development'],
-  },
-  {
-    title: 'Next.js',
+    title: 'PHP',
     competency: 3,
-    category: ['Web Development'],
-  },
-  // Databases
-  {
-    title: 'PostgreSQL',
-    competency: 4,
-    category: ['Databases'],
+    category: ['Languages', 'Web Development'],
   },
   {
-    title: 'Redis',
+    title: 'C#',
+    competency: 2,
+    category: ['Languages'],
+  },
+  {
+    title: 'Kotlin',
     competency: 3,
-    category: ['Databases'],
+    category: ['Languages'],
   },
-  // Infrastructure
+];
+
+// CI/CD - Infrastructure
+const infra: Skill[] = [
   {
     title: 'AWS',
-    competency: 4,
-    category: ['Infrastructure'],
+    competency: 2,
+    category: ['CI/CD - Infrastructure'],
   },
   {
     title: 'Docker',
     competency: 4,
-    category: ['Infrastructure'],
+    category: ['CI/CD - Infrastructure'],
   },
   {
     title: 'Kubernetes',
-    competency: 3,
-    category: ['Infrastructure'],
+    competency: 4,
+    category: ['CI/CD - Infrastructure'],
   },
   {
-    title: 'Observability',
-    competency: 4,
-    category: ['Infrastructure', 'ML Engineering'],
+    title: 'Github Actions',
+    competency: 3,
+    category: ['CI/CD - Infrastructure'],
   },
-].map((skill) => ({ ...skill, category: skill.category.sort() }));
+  {
+    title: 'Gitlab CI',
+    competency: 4,
+    category: ['CI/CD - Infrastructure'],
+  },
+  {
+    title: 'GCP',
+    competency: 2,
+    category: ['CI/CD - Infrastructure'],
+  },
+  {
+    title: 'Amplify',
+    competency: 2,
+    category: ['CI/CD - Infrastructure'],
+  },
+  {
+    title: 'Openshift',
+    competency: 2,
+    category: ['CI/CD - Infrastructure'],
+  },
+  {
+    title: 'Terraform',
+    competency: 2,
+    category: ['CI/CD - Infrastructure'],
+  },
+  {
+    title: 'Datadog',
+    competency: 3,
+    category: ['CI/CD - Infrastructure'],
+  },
+  {
+    title: 'ArgoCD',
+    competency: 2,
+    category: ['CI/CD - Infrastructure'],
+  },
+  {
+    title: 'Dokploy',
+    competency: 2,
+    category: ['CI/CD - Infrastructure'],
+  },
+];
+
+// Databases
+const databases: Skill[] = [
+  {
+    title: 'PostgreSQL',
+    competency: 2,
+    category: ['Databases'],
+  },
+  {
+    title: 'MySQL',
+    competency: 3,
+    category: ['Databases'],
+  },
+  {
+    title: 'Oracle',
+    competency: 2,
+    category: ['Databases'],
+  },
+  {
+    title: 'MongoDB',
+    competency: 3,
+    category: ['Databases'],
+  },
+  {
+    title: 'IPFS',
+    competency: 3,
+    category: ['Databases'],
+  },
+];
+
+// Ontology
+const ontology: Skill[] = [
+  {
+    title: 'RDF',
+    competency: 3,
+    category: ['Ontology'],
+  },
+  {
+    title: 'OWL',
+    competency: 3,
+    category: ['Ontology'],
+  },
+  {
+    title: 'SHACL',
+    competency: 3,
+    category: ['Ontology'],
+  },
+  {
+    title: 'SPARQL',
+    competency: 3,
+    category: ['Ontology'],
+  },
+  {
+    title: 'ODRL',
+    competency: 5,
+    category: ['Ontology'],
+  },
+  {
+    title: 'JSON-LD',
+    competency: 4,
+    category: ['Ontology'],
+  },
+];
+
+// Others
+const others: Skill[] = [
+  {
+    title: 'REST',
+    competency: 5,
+    category: ['Others', 'Web Development'],
+  },
+  {
+    title: 'Kafka',
+    competency: 3,
+    category: ['Others'],
+  },
+  {
+    title: 'GraphQL',
+    competency: 3,
+    category: ['Others'],
+  },
+  {
+    title: 'Quarkus',
+    competency: 2,
+    category: ['Others'],
+  },
+  {
+    title: 'Android',
+    competency: 3,
+    category: ['Others'],
+  },
+  {
+    title: 'Unity',
+    competency: 2,
+    category: ['Others'],
+  },
+  {
+    title: 'Accessibility',
+    competency: 3,
+    category: ['Others', 'Web Development'],
+  },
+];
+
+skills.push(...webDev);
+skills.push(...languages);
+skills.push(...infra);
+skills.push(...databases);
+skills.push(...ontology);
+skills.push(...others);
+
+skills.map((skill) => ({ ...skill, category: skill.category.sort() }));
 
 /**
  * Category colors with pre-computed text contrast.
@@ -158,14 +311,11 @@ const FALLBACK_COLORS: { color: string; textColor: 'dark' | 'light' }[] = [
 function buildCategories(skillsList: Skill[]): Category[] {
   const uniqueCategories = Array.from(
     new Set(skillsList.flatMap(({ category }) => category)),
-  ).sort();
+  );
 
   const allColors = [...CATEGORY_COLORS, ...FALLBACK_COLORS];
 
-  if (
-    process.env.NODE_ENV === 'development' &&
-    uniqueCategories.length > allColors.length
-  ) {
+  if (process.env.NODE_ENV === 'development' && uniqueCategories.length > allColors.length) {
     console.warn(
       `[skills.ts] Warning: ${uniqueCategories.length} categories but only ${allColors.length} colors defined`,
     );

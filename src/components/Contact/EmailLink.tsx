@@ -19,20 +19,18 @@ function prefersReducedMotion(): boolean {
 
 const messages = [
   'hi',
-  'hello',
+  'bonjour',
   'hola',
-  'you-can-email-me-at-literally-anything! Really',
+  'you-can-email-me-at-literally-anything',
   'well, not anything. But most things',
   'like-this',
   'or-this',
-  'but not this :(  ',
-  'you.can.also.email.me.with.specific.topics.like',
+  'but not this :(',
+  'or.with.specific.topics.like',
   'just-saying-hi',
   'please-work-for-us',
   'help',
-  'admin',
-  'or-I-really-like-your-website',
-  'thanks',
+  'admin'
 ];
 
 function useInterval(callback: () => void, delay: number | null) {
@@ -170,7 +168,7 @@ export default function EmailLink({ loopMessage = false }: EmailLinkProps) {
   const emailContent = (
     <>
       <span className="contact-email-prefix">{displayMessage}</span>
-      <span className="contact-email-domain">@mldangelo.com</span>
+      <span className="contact-email-domain">@ysellami.com</span>
     </>
   );
 
@@ -182,7 +180,7 @@ export default function EmailLink({ loopMessage = false }: EmailLinkProps) {
     >
       {isValid ? (
         <a
-          href={`mailto:${displayMessage}@mldangelo.com`}
+          href={`mailto:${displayMessage}@ysellami.com`}
           className="contact-email-link"
           onClick={handleClick}
           onKeyDown={handleKeyDown}

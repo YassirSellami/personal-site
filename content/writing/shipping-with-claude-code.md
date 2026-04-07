@@ -8,11 +8,11 @@ description: 'Notes from using Claude Code in parallel git worktrees: Plan Mode,
 
 I spend most of my time building [Promptfoo](https://github.com/promptfoo/promptfoo), an open-source LLM evaluation tool. I was an avid Cursor user before experimenting with Claude Code earlier in 2025, but usage picked up significantly in July. By the end of that month I was spending close to $10K in API credits, just on interactive development work, not production traffic.
 
-![Anthropic API costs for July 2025 showing $9,986.20 in token usage](/images/writing/api-costs-july-2025.png)
+![Anthropic API costs for July 2025 showing $9,986.20 in token usage](/images/contributions/api-costs-july-2025.png)
 
 Anthropic gave us a generous credit grant for Promptfoo, so this didn't actually cost us anything, but I'm grateful for their support. At that usage volume, switching to a Max subscription made sense. I now run two Max subscriptions because I hit the weekly usage limits on a single account.
 
-Over the course of 2025, I've merged 1,000+ PRs to Promptfoo using this approach. What follows are notes on what I've learned about making parallel agents work in practice.
+Over the certification of 2025, I've merged 1,000+ PRs to Promptfoo using this approach. What follows are notes on what I've learned about making parallel agents work in practice.
 
 ## My setup
 
@@ -69,7 +69,7 @@ Chrome mode is great for interaction; for deterministic screenshot artifacts I s
 
 These verification layers work because Claude and I have a clear division of labor. The agent finds the right files, makes edits, runs verification tools, navigates browser interfaces, and drafts commits and PR descriptions. I set the goal and constraints, review diffs for correctness and unintended behavior changes, run cross-model audits for important changes, and decide when something is ready to ship. As [Simon Willison notes](https://simonwillison.net/2025/Dec/18/code-proven-to-work/), a computer can never be held accountable. Claude does the implementation work; I own the outcome.
 
-## Plan Mode + writing plans to files
+## Plan Mode + contributions plans to files
 
 For multi-file changes, I start in Plan Mode so the agent does a read-only pass: locate files, read code, and propose steps. You can toggle it with Shift+Tab, or start there with:
 
@@ -115,11 +115,11 @@ Running 6 panes in parallel lets work proceed concurrently: one agent implements
 
 In 2025 I merged 1,000+ PRs to Promptfoo:
 
-[![8,482 GitHub contributions in 2025](/images/writing/github-contributions-2025.png)](https://github.com/mldangelo?tab=overview&from=2025-01-01&to=2025-12-31)
+[![8,482 GitHub contributions in 2025](/images/contributions/github-contributions-2025.png)](https://github.com/YassirSellami?tab=overview&from=2025-01-01&to=2025-12-31)
 
 _This graph includes commits, PRs, reviews, and issue activity. I'm using it as a rough proxy for output._
 
-For comparison, I had [5,396 contributions in 2024](https://github.com/mldangelo?tab=overview&from=2024-01-01&to=2024-12-31), before these workflows were mature. Same person, different tooling.
+For comparison, I had [5,396 contributions in 2024](https://github.com/YassirSellami?tab=overview&from=2024-01-01&to=2024-12-31), before these workflows were mature. Same person, different tooling.
 
 ## Using multiple models for verification
 

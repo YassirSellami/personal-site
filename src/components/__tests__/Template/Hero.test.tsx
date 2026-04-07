@@ -15,7 +15,7 @@ describe('Hero', () => {
     render(<Hero />);
 
     const heading = screen.getByRole('heading', { level: 1 });
-    expect(heading).toHaveTextContent("Michael D'Angelo");
+    expect(heading).toHaveTextContent("Yassir Sellami");
   });
 
   it('renders the tagline with OpenAI and promptfoo links', () => {

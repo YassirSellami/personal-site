@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from 'react';
 
-import type { StatData } from '../../components/Stats/types';
+import type { StatData } from '@/components/Stats/types';
 
 /** Birth date for age calculation (ISO format) */
-const BIRTH_DATE = '1990-02-05T09:24:00';
+const BIRTH_DATE = '1994-11-03T07:30:00';
 
 /** Milliseconds in an average year (accounting for leap years) */
 const MS_PER_YEAR = 1000 * 60 * 60 * 24 * 365.2421897;
@@ -14,16 +14,14 @@ const MS_PER_YEAR = 1000 * 60 * 60 * 24 * 365.2421897;
 const AGE_UPDATE_INTERVAL = 25;
 
 /** Number of decimal places for age display */
-const AGE_PRECISION = 11;
+const AGE_PRECISION = 7;
 
 function Age() {
   const [age, setAge] = useState<string>('');
 
   const tick = () => {
     const birthTime = new Date(BIRTH_DATE);
-    setAge(
-      ((Date.now() - birthTime.getTime()) / MS_PER_YEAR).toFixed(AGE_PRECISION),
-    );
+    setAge(((Date.now() - birthTime.getTime()) / MS_PER_YEAR).toFixed(AGE_PRECISION));
   };
 
   useEffect(() => {
@@ -40,19 +38,19 @@ function Age() {
 const data: StatData[] = [
   {
     key: 'age',
-    label: 'Current age',
+    label: 'Laps around the sun',
     value: <Age />,
-  },
-  {
-    key: 'countries',
-    label: 'Countries visited',
-    value: 53,
-    link: 'https://www.google.com/maps/d/embed?mid=1iBBTscqateQ93pWFVfHCUZXoDu8&z=2',
   },
   {
     key: 'location',
     label: 'Current city',
-    value: 'New York, NY',
+    value: 'Lille, FR',
+  },
+  {
+    key: 'hobbies',
+    label: 'When I am not coding, I am most likely',
+    value: 'Cycling, hiking or traveling',
+    link: 'https://www.youtube.com/@FlowRides-cycling',
   },
 ];
 

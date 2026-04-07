@@ -7,16 +7,16 @@ import { metadata as notFoundMetadata } from '../not-found';
 import { metadata as projectsMetadata } from '../projects/page';
 import { metadata as resumeMetadata } from '../resume/page';
 import { metadata as statsMetadata } from '../stats/page';
-import { metadata as writingMetadata } from '../writing/page';
+import { metadata as contributionMetadata } from '../contributions/page';
 
 describe('page metadata', () => {
   it.each([
     ['about', aboutMetadata, `${SITE_URL}/about/`],
     ['contact', contactMetadata, `${SITE_URL}/contact/`],
-    ['archive', projectsMetadata, `${SITE_URL}/projects/`],
+    ['projects', projectsMetadata, `${SITE_URL}/projects/`],
     ['resume', resumeMetadata, `${SITE_URL}/resume/`],
     ['stats', statsMetadata, `${SITE_URL}/stats/`],
-    ['writing', writingMetadata, `${SITE_URL}/writing/`],
+    ['contributions', contributionMetadata, `${SITE_URL}/contributions/`],
   ])('sets page-specific open graph metadata for %s', (_, metadata, url) => {
     expect(metadata.openGraph?.url).toBe(url);
     expect(metadata.openGraph?.description).toBe(metadata.description);
@@ -28,10 +28,10 @@ describe('page metadata', () => {
   it.each([
     ['about', aboutMetadata],
     ['contact', contactMetadata],
-    ['archive', projectsMetadata],
+    ['projects', projectsMetadata],
     ['resume', resumeMetadata],
     ['stats', statsMetadata],
-    ['writing', writingMetadata],
+    ['contributions', contributionMetadata],
   ])('sets page-specific twitter metadata for %s', (_, metadata) => {
     expect(metadata.twitter?.description).toBe(metadata.description);
     expect(metadata.twitter?.title).toBe(`${metadata.title} | ${AUTHOR_NAME}`);
@@ -53,8 +53,8 @@ describe('page metadata', () => {
     );
   });
 
-  it('preserves the writing rss alternate', () => {
-    expect(writingMetadata.alternates?.types?.['application/rss+xml']).toBe(
+  it('preserves the contributions rss alternate', () => {
+    expect(contributionMetadata.alternates?.types?.['application/rss+xml']).toBe(
       '/feed.xml',
     );
   });

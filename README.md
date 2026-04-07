@@ -1,13 +1,13 @@
 # Personal Website Template
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/mldangelo/personal-site/node.js.yml?branch=main)](https://github.com/mldangelo/personal-site/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/YassirSellami/personal-site/node.js.yml?branch=main)](https://github.com/YassirSellami/personal-site/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/mldangelo/personal-site?style=social)](https://github.com/mldangelo/personal-site/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/mldangelo/personal-site?style=social)](https://github.com/mldangelo/personal-site/network/members)
+[![GitHub Stars](https://img.shields.io/github/stars/YassirSellami/personal-site?style=social)](https://github.com/YassirSellami/personal-site/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/YassirSellami/personal-site?style=social)](https://github.com/YassirSellami/personal-site/network/members)
 
 A free, open-source portfolio website template built with [Next.js](https://nextjs.org/), [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), and [Tailwind CSS](https://tailwindcss.com/). Fork it and make it your own in under an hour.
 
-**[See it live →](https://mldangelo.com)**
+**[See it live →](https://ysellami.com)**
 
 ## Why This Template?
 
@@ -23,7 +23,7 @@ A free, open-source portfolio website template built with [Next.js](https://next
 ### Option 1: Local Development
 
 ```bash
-gh repo fork mldangelo/personal-site --clone
+gh repo fork YassirSellami/personal-site --clone
 cd personal-site
 npm install
 npm run dev

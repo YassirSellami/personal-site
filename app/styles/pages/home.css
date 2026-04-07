@@ -22,8 +22,8 @@
 
 /* Portrait */
 .hero-avatar {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto 2.5rem;
   border-radius: 50%;
   position: relative;
@@ -161,22 +161,24 @@
   pointer-events: none;
 }
 
-.hero-gradient {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1200px;
-  height: 800px;
-  background: radial-gradient(
-    ellipse 100% 100% at 50% 50%,
-    var(--color-accent-light) 0%,
-    var(--color-accent-subtle) 15%,
-    color-mix(in srgb, var(--color-accent) 3%, transparent) 30%,
-    transparent 45%
-  );
-  filter: blur(100px);
-  opacity: 0.6;
+@media (max-width: 736px) {
+  .hero-gradient {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    height: 800px;
+    background: radial-gradient(
+            ellipse 100% 100% at 50% 50%,
+            var(--color-accent-light) 0%,
+            var(--color-accent-subtle) 15%,
+            color-mix(in srgb, var(--color-accent) 3%, transparent) 30%,
+            transparent 45%
+    );
+    filter: blur(100px);
+    opacity: 0.6;
+  }
 }
 
 /* Mobile */

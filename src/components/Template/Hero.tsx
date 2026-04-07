@@ -1,45 +1,35 @@
 import Link from 'next/link';
 
 import ThemePortrait from './ThemePortrait';
+import CurrentPosition from '@/components/Template/CurrentPosition';
 
 export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
         <div className="hero-avatar">
-          <ThemePortrait width={160} height={160} priority />
+          <ThemePortrait width={200} height={200} priority />
         </div>
 
         <h1 className="hero-title">
-          <span className="hero-name">Michael D&apos;Angelo</span>
+          <span className="hero-name">Yassir Sellami</span>
         </h1>
 
-        <p className="hero-tagline">
-          Member of the Technical Staff at{' '}
-          <a href="https://openai.com" className="hero-highlight">
-            OpenAI
-          </a>
-          , where I work on{' '}
-          <a href="https://promptfoo.dev" className="hero-highlight">
-            Promptfoo
-          </a>{' '}
-          and agent security.
-          <br />
-          Previously co-founded, scaled, and sold Promptfoo to OpenAI.
-        </p>
+        <CurrentPosition/>
 
         <div className="hero-chips">
-          <span className="hero-chip">YC Alum</span>
-          <span className="hero-chip">Stanford ICME</span>
-          <span className="hero-chip">Co-founded Arthena & Matroid</span>
+          <span className="hero-chip">Web Development</span>
+          <span className="hero-chip">Mobile apps</span>
+          <span className="hero-chip">Technical Architecture</span>
+          <span className="hero-chip">Decentralized systems</span>
         </div>
 
         <div className="hero-cta">
-          <Link href="/about" className="button button-primary">
-            About Me
-          </Link>
-          <Link href="/resume" className="button button-secondary">
+          <Link href="/resume" className="button button-primary">
             View Resume
+          </Link>
+          <Link href="/contact" className="button button-secondary">
+            Get in touch
           </Link>
         </div>
       </div>

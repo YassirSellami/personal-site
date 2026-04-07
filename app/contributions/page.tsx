@@ -1,51 +1,49 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageWrapper from '@/components/Template/PageWrapper';
-import writing from '@/data/writing';
+import contributions from '@/data/contributions';
 import { createPageMetadata } from '@/lib/metadata';
 import { getAllPosts } from '@/lib/posts';
 import { formatDate } from '@/lib/utils';
 
 export const metadata: Metadata = {
   ...createPageMetadata({
-    title: 'Writing',
-    description:
-      'Articles on AI security, LLM red teaming, and trust & safety.',
-    path: '/writing/',
-  }),
-  alternates: {
-    types: {
-      'application/rss+xml': '/feed.xml',
-    },
-  },
+    title: 'Contributions',
+    description: 'Papers, Articles and other contributions.',
+    path: '/contributions/',
+  })
 };
 
 interface UnifiedItem {
   title: string;
   url: string;
+  authors: string[];
   date: string;
   description: string;
   isExternal: boolean;
 }
 
 // Extracted component to reduce duplication
-interface WritingItemProps {
+interface ContributionsItemProps {
   item: UnifiedItem;
   showDate?: boolean;
 }
 
-function WritingItem({ item, showDate = true }: WritingItemProps) {
+function ContributionsItem({ item, showDate = true }: ContributionsItemProps) {
   const content = (
     <>
       {showDate && item.date && (
-        <time className="writing-date" dateTime={item.date}>
+        <time className="contributions-date" dateTime={item.date}>
           {formatDate(item.date)}
         </time>
       )}
-      <h2 className="writing-title">{item.title}</h2>
-      <p className="writing-description">{item.description}</p>
+      <h2 className="contributions-title">{item.title}</h2>
+      <p className="contributions-date">
+        {item.authors.join(', ')}
+      </p>
+      <p className="contributions-description">{item.description}</p>
       {item.isExternal && (
-        <span className="writing-external" aria-hidden="true">
+        <span className="contributions-external" aria-hidden="true">
           ↗
         </span>
       )}
@@ -54,37 +52,33 @@ function WritingItem({ item, showDate = true }: WritingItemProps) {
 
   if (item.isExternal) {
     return (
-      <a
-        href={item.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="writing-item"
-      >
+      <a href={item.url} target="_blank" rel="noopener noreferrer" className="contributions-item">
         {content}
       </a>
     );
   }
 
   return (
-    <Link href={item.url} className="writing-item">
+    <Link href={item.url} className="contributions-item">
       {content}
     </Link>
   );
 }
 
-export default function WritingPage() {
+export default function ContributionsPage() {
   // Get internal posts from markdown files
   const internalPosts = getAllPosts();
   const internalItems: UnifiedItem[] = internalPosts.map((post) => ({
     title: post.title,
-    url: `/writing/${post.slug}`,
+    url: `/contributions/${post.slug}`,
+    authors: post.authors,
     date: post.date,
     description: post.description,
     isExternal: false,
   }));
 
   // Get external articles from data file
-  const externalItems: UnifiedItem[] = writing.map((item) => ({
+  const externalItems: UnifiedItem[] = contributions.map((item) => ({
     ...item,
     isExternal: true,
   }));
@@ -98,31 +92,23 @@ export default function WritingPage() {
 
   return (
     <PageWrapper>
-      <article className="writing-page">
-        <header className="writing-header">
-          <div className="writing-header-row">
-            <h1 className="page-title">Writing</h1>
-            <a
-              href="/feed.xml"
-              className="writing-rss-link"
-              title="RSS Feed"
-              aria-label="RSS Feed"
-            >
-              RSS
-            </a>
+      <article className="contributions-page">
+        <header className="contributions-header">
+          <div className="contributions-header-row">
+            <h1 className="page-title">Contributions</h1>
           </div>
         </header>
 
-        <div className="writing-list">
+        <div className="contributions-list">
           {dated.map((item) => (
-            <WritingItem key={item.url} item={item} />
+            <ContributionsItem key={item.url} item={item} />
           ))}
 
           {undated.length > 0 && (
             <>
-              <div className="writing-section-label">Guides</div>
+              <div className="contributions-section-label">Guides</div>
               {undated.map((item) => (
-                <WritingItem key={item.url} item={item} showDate={false} />
+                <ContributionsItem key={item.url} item={item} showDate={false} />
               ))}
             </>
           )}

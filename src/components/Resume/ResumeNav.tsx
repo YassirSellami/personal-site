@@ -4,9 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 
 const sections = [
   { name: 'Experience', id: 'experience' },
-  { name: 'Education', id: 'education' },
   { name: 'Skills', id: 'skills' },
-  { name: 'Courses', id: 'courses' },
+  { name: 'Education', id: 'education' },
+  { name: 'Languages', id: 'languages' },
+  // { name: 'Certifications', id: 'certifications' },
   { name: 'References', id: 'references' },
 ] as const;
 

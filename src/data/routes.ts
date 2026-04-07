@@ -7,33 +7,33 @@ export interface Route {
 const routes: Route[] = [
   {
     index: true,
-    label: "Michael D'Angelo",
+    label: "Yassir Sellami",
     path: '/',
   },
-  {
-    label: 'About',
-    path: '/about',
-  },
+  // {
+  //   label: 'About',
+  //   path: '/about',
+  // },
   {
     label: 'Resume',
     path: '/resume',
   },
   {
-    label: 'Writing',
-    path: '/writing',
+   label: 'Contributions',
+   path: '/contributions',
   },
-  {
-    label: 'Stats',
-    path: '/stats',
-  },
+  // {
+  //   label: 'Stats',
+  //   path: '/stats',
+  // },
   {
     label: 'Contact',
     path: '/contact',
   },
-  {
-    label: 'Archive',
-    path: '/projects',
-  },
+  // {
+  //   label: 'Projects',
+  //   path: '/projects',
+  // },
 ];
 
 export default routes;

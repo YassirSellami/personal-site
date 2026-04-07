@@ -54,6 +54,11 @@
   border-bottom-color: var(--color-border);
 }
 
+[data-theme='dark'] .site-logo {
+  width: 100px;
+  content:url('/images/logo-dark.png');
+}
+
 [data-theme='dark'] .nav-link:hover {
   background-color: var(--color-surface-active);
 }
@@ -106,13 +111,13 @@
   border-color: var(--color-border-alt);
 }
 
-/* Course cards */
-[data-theme='dark'] .course-container a {
+/* Certification cards */
+[data-theme='dark'] .certification-container a {
   background: var(--color-surface-subtle);
   border-color: var(--color-border);
 }
 
-[data-theme='dark'] .course-container a:hover {
+[data-theme='dark'] .certification-container a:hover {
   background: var(--color-surface-hover);
   border-color: var(--color-border-alt);
 }

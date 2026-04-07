@@ -20,7 +20,8 @@
 .resume-page .education .title,
 .resume-page .experience .title,
 .resume-page .skills .title,
-.resume-page .courses .title,
+.resume-page .certifications .title,
+.resume-page .languages .title,
 .resume-page .references .title {
   margin-bottom: 2.5rem;
   text-align: center;
@@ -29,7 +30,8 @@
 .resume-page .education .title h3,
 .resume-page .experience .title h3,
 .resume-page .skills .title h3,
-.resume-page .courses .title h3,
+.resume-page .certifications .title h3,
+.resume-page .languages .title h3,
 .resume-page .references .title h3 {
   font-size: var(--text-3xl);
   font-weight: var(--font-weight-black);
@@ -48,11 +50,11 @@
   font-size: var(--text-md);
 }
 
-.resume-page .courses {
+.resume-page .certifications {
   padding-top: 1em;
 }
 
-.resume-page .courses .course-list {
+.resume-page .certifications .certification-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
@@ -62,8 +64,23 @@
 }
 
 @media (max-width: 736px) {
-  .resume-page .courses .course-list {
+  .resume-page .certifications .certification-list {
     grid-template-columns: 1fr;
+  }
+}
+
+.resume-page .languages .language-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 736px) {
+  .resume-page .languages .language-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -96,6 +113,11 @@
   color: var(--color-fg);
   max-width: 640px;
   margin: 0 auto;
+}
+
+.resume-strong {
+  color: var(--color-fg-bold);
+  font-weight: var(--font-weight-bold);
 }
 
 .resume-nav {

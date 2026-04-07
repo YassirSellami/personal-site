@@ -12,7 +12,7 @@ describe('sitemap', () => {
         expect.objectContaining({ url: `${SITE_URL}/about/` }),
         expect.objectContaining({ url: `${SITE_URL}/resume/` }),
         expect.objectContaining({ url: `${SITE_URL}/projects/` }),
-        expect.objectContaining({ url: `${SITE_URL}/writing/` }),
+        expect.objectContaining({ url: `${SITE_URL}/contributions/` }),
         expect.objectContaining({ url: `${SITE_URL}/stats/` }),
         expect.objectContaining({ url: `${SITE_URL}/contact/` }),
       ]),
@@ -23,8 +23,8 @@ describe('sitemap', () => {
     const entries = sitemap();
     const postEntries = entries.filter(
       (entry) =>
-        entry.url.startsWith(`${SITE_URL}/writing/`) &&
-        entry.url !== `${SITE_URL}/writing/`,
+        entry.url.startsWith(`${SITE_URL}/contributions/`) &&
+        entry.url !== `${SITE_URL}/contributions/`,
     );
 
     expect(postEntries.length).toBeGreaterThan(0);

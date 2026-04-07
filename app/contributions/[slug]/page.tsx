@@ -28,7 +28,7 @@ export async function generateMetadata({
     };
   }
 
-  const url = `${SITE_URL}/writing/${post.slug}/`;
+  const url = `${SITE_URL}/contributions/${post.slug}/`;
 
   return {
     title: post.title,
@@ -40,11 +40,6 @@ export async function generateMetadata({
       url,
       publishedTime: post.date,
       authors: [AUTHOR_NAME],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      description: post.description,
     },
   };
 }

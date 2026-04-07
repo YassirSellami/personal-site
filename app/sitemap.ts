@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Generate entries for blog posts
   const posts = getAllPosts();
   const postEntries: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${SITE_URL}/writing/${post.slug}/`,
+    url: `${SITE_URL}/contributions/${post.slug}/`,
     lastModified: new Date(post.date),
     changeFrequency: 'monthly',
     priority: 0.6,
@@ -21,29 +21,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: SITE_URL,
       lastModified: currentDate,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 1,
     },
     {
       url: `${SITE_URL}/about/`,
       lastModified: currentDate,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${SITE_URL}/resume/`,
       lastModified: currentDate,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${SITE_URL}/projects/`,
       lastModified: currentDate,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: `${SITE_URL}/writing/`,
+      url: `${SITE_URL}/contributions/`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.8,

@@ -5,8 +5,9 @@ import Script from 'next/script';
 import GoogleAnalytics from '@/components/Template/GoogleAnalytics';
 import Navigation from '@/components/Template/Navigation';
 import ScrollToTop from '@/components/Template/ScrollToTop';
-import { AUTHOR_NAME, SITE_URL, TWITTER_HANDLE } from '@/lib/utils';
+import { AUTHOR_NAME, SITE_URL } from '@/lib/utils';
 import './tailwind.css';
+import { currentPosition } from '@/data/about';
 
 const sourceSans = Source_Sans_3({
   weight: ['400', '700'],
@@ -26,8 +27,7 @@ const raleway = Raleway({
   adjustFontFallback: true,
 });
 
-const siteDescription =
-  'Member of the Technical Staff at OpenAI, working on Promptfoo and agent security. Previously co-founded Promptfoo, Arthena, and Matroid, and led engineering at Smile ID.';
+const siteDescription = currentPosition;
 
 export const metadata: Metadata = {
   title: {
@@ -37,13 +37,13 @@ export const metadata: Metadata = {
   description: siteDescription,
   keywords: [
     AUTHOR_NAME,
-    'OpenAI',
-    'Promptfoo',
-    'agent security',
-    'LLM security',
-    'machine learning',
-    'startup founder',
-    'YC',
+    'Gaia-X',
+    'Fullstack Developer',
+    'Developer Lille',
+    'Dataspace Expert',
+    'Frontend Developer',
+    'Backend Developer',
+    'Tech Lead',
   ],
   authors: [{ name: AUTHOR_NAME }],
   creator: AUTHOR_NAME,
@@ -63,14 +63,6 @@ export const metadata: Metadata = {
         alt: AUTHOR_NAME,
       },
     ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: TWITTER_HANDLE,
-    creator: TWITTER_HANDLE,
-    title: AUTHOR_NAME,
-    description: siteDescription,
-    images: ['/images/me.jpg'],
   },
   robots: {
     index: true,

@@ -20,7 +20,7 @@ export default function SkillTag({ data, categories }: SkillTagProps) {
   const sizeClass =
     competency >= 5
       ? 'skill-tag--lg'
-      : competency >= 4
+      : competency >= 3
         ? 'skill-tag--md'
         : 'skill-tag--sm';
 

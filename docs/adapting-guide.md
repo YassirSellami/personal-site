@@ -38,7 +38,7 @@ Work through these steps in order for the smoothest experience.
 | Work experience     | `src/data/resume/work.ts`    |
 | Education           | `src/data/resume/degrees.ts` |
 | Skills & categories | `src/data/resume/skills.ts`  |
-| Courses (optional)  | `src/data/resume/courses.ts` |
+| Certifications (optional)  | `src/data/resume/certifications.ts` |
 
 ### Step 4: Projects
 
@@ -47,11 +47,11 @@ Work through these steps in order for the smoothest experience.
 | Project entries | `src/data/projects.ts`    |
 | Project images  | `public/images/projects/` |
 
-### Step 5: Blog/Writing (Optional)
+### Step 5: Blog/Contributions (Optional)
 
-The site includes a blog at `/writing` with RSS feed. You can use it, customize it, or remove it entirely.
+The site includes a blog at `/contributions` with RSS feed. You can use it, customize it, or remove it entirely.
 
-**To add posts**, create Markdown files in `content/writing/`. The filename becomes the URL slug (e.g., `my-post.md` → `/writing/my-post`).
+**To add posts**, create Markdown files in `content/contributions/`. The filename becomes the URL slug (e.g., `my-post.md` → `/contributions/my-post`).
 
 ```markdown
 ---
@@ -66,10 +66,10 @@ Your content here...
 **To disable the blog entirely:**
 
 ```bash
-rm -rf app/writing app/feed.xml content/writing
+rm -rf app/contributions app/feed.xml content/contributions
 ```
 
-Then remove the "Writing" link from `src/data/routes.ts`.
+Then remove the "Contributions" link from `src/data/routes.ts`.
 
 ### Step 6: Branding & Theme
 
@@ -81,11 +81,11 @@ Then remove the "Writing" link from `src/data/routes.ts`.
 
 ### Step 7: Final Cleanup
 
-Search the codebase for "Michael" or "mldangelo" to find any remaining references to change.
+Search the codebase for "Yassir" or "YassirSellami" to find any remaining references to change.
 
 ```bash
-grep -r "Michael" src/
-grep -r "mldangelo" .
+grep -r "Yassir" src/
+grep -r "YassirSellami" .
 ```
 
 ## Deployment
@@ -152,7 +152,7 @@ Edit `app/tailwind.css`. Find `:root` (light mode) and `[data-theme="dark"]` (da
 
 ## Getting Help
 
-- Open an issue: https://github.com/mldangelo/personal-site/issues
-- Email: help@mldangelo.com
+- Open an issue: https://github.com/YassirSellami/personal-site/issues
+- Email: help@ysellami.com
 
 If you find bugs or unclear instructions, please submit a PR—contributions help everyone.
