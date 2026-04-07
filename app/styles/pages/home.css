@@ -161,23 +161,23 @@
   pointer-events: none;
 }
 
-  .hero-gradient {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 80%;
-    background: radial-gradient(
-      ellipse 100% 100% at 50% 50%,
-      var(--color-accent) 20%,
-      var(--color-accent-subtle) 15%,
-      color-mix(in srgb, var(--color-accent) 3%, transparent) 30%,
-      transparent 45%
-    );
-    filter: blur(100px);
-    opacity: 0.6;
-  }
+.hero-gradient {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(
+    ellipse 100% 100% at 50% 50%,
+    var(--color-accent) 20%,
+    var(--color-accent-subtle) 15%,
+    color-mix(in srgb, var(--color-accent) 3%, transparent) 30%,
+    transparent 45%
+  );
+  filter: blur(100px);
+  opacity: 0.6;
+}
 
 /* Mobile */
 @media (max-width: 640px) {
