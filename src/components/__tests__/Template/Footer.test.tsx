@@ -15,9 +15,6 @@ describe('Footer', () => {
     render(<Footer />);
 
     expect(screen.getByText("Yassir Sellami")).toBeInTheDocument();
-    expect(
-      screen.getByText('Member of the Technical Staff at OpenAI'),
-    ).toBeInTheDocument();
   });
 
   it('displays the current year in copyright', () => {
@@ -32,17 +29,9 @@ describe('Footer', () => {
   it('renders navigation links', () => {
     render(<Footer />);
 
-    expect(screen.getByRole('link', { name: /about/i })).toHaveAttribute(
-      'href',
-      '/about',
-    );
     expect(screen.getByRole('link', { name: /resume/i })).toHaveAttribute(
       'href',
       '/resume',
-    );
-    expect(screen.getByRole('link', { name: /projects/i })).toHaveAttribute(
-      'href',
-      '/projects',
     );
     expect(screen.getByRole('link', { name: /contact/i })).toHaveAttribute(
       'href',

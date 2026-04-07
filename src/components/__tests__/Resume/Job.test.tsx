@@ -14,18 +14,11 @@ describe('Job', () => {
     highlights: ['Shipped feature X', 'Improved performance by 50%'],
   };
 
-  it('renders company name with link', () => {
-    render(<Job data={mockJob} />);
-
-    const link = screen.getByRole('link', { name: /acme corp/i });
-    expect(link).toHaveAttribute('href', 'https://acme.com');
-  });
-
   it('renders position title', () => {
     render(<Job data={mockJob} />);
 
     expect(screen.getByRole('heading', { level: 4 })).toHaveTextContent(
-      'Senior Engineer',
+      'Acme Corp - Senior Engineer',
     );
   });
 

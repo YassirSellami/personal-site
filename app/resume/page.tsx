@@ -8,12 +8,11 @@ import Skills from '@/components/Resume/Skills';
 import PageWrapper from '@/components/Template/PageWrapper';
 import degrees from '@/data/resume/degrees';
 import { categories, skills } from '@/data/resume/skills';
-import work from '@/data/resume/work';
+import { work, currentPosition } from '@/data/resume/work';
 import { createPageMetadata } from '@/lib/metadata';
 import Languages from '@/components/Resume/Languages';
 import languages from '@/data/resume/languages';
 import ResumeHeader from '@/components/Resume/ResumeHeader';
-import { currentPosition } from '@/data/about';
 
 export const metadata: Metadata = createPageMetadata({
   title: 'Resume',

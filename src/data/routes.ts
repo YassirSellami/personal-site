@@ -10,10 +10,6 @@ const routes: Route[] = [
     label: "Yassir Sellami",
     path: '/',
   },
-  // {
-  //   label: 'About',
-  //   path: '/about',
-  // },
   {
     label: 'Resume',
     path: '/resume',

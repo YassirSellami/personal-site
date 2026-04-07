@@ -13,7 +13,9 @@ export interface Position {
   techStack?: string[];
 }
 
-const work: Position[] = [
+export const currentPosition: string = 'Tech Lead at Gaia-X AISBL';
+
+export const work: Position[] = [
   {
     name: 'Gaia-X',
     position: 'Technical Lead',
@@ -185,5 +187,3 @@ closely aligned with European regulations such as GDPR to strengthen Europe’s 
     techStack: ['Spring Boot', 'Angular', 'HTML', 'CSS', 'AWS', 'Git', 'Scrum', 'Jenkins'],
   },
 ];
-
-export default work;

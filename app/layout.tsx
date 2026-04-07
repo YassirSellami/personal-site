@@ -7,7 +7,8 @@ import Navigation from '@/components/Template/Navigation';
 import ScrollToTop from '@/components/Template/ScrollToTop';
 import { AUTHOR_NAME, SITE_URL } from '@/lib/utils';
 import './tailwind.css';
-import { currentPosition } from '@/data/about';
+
+import { currentPosition } from '@/data/resume/work';
 
 const sourceSans = Source_Sans_3({
   weight: ['400', '700'],

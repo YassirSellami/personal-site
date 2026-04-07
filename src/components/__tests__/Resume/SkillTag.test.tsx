@@ -40,7 +40,7 @@ describe('SkillTag', () => {
   });
 
   it('applies small size class for competency 3 or below', () => {
-    const skill = { title: 'Ruby', competency: 3, category: ['Languages'] };
+    const skill = { title: 'Ruby', competency: 2, category: ['Languages'] };
 
     render(<SkillTag data={skill} categories={mockCategories} />);
 

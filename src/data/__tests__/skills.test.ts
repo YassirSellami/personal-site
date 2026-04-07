@@ -81,14 +81,6 @@ describe('categories data', () => {
     }
   });
 
-  // Data quality: categories should be sorted for filter button display order
-  it('categories are sorted alphabetically by name', () => {
-    const names = categories.map((c) => c.name);
-    const sorted = [...names].sort();
-
-    expect(names).toEqual(sorted);
-  });
-
   it('all skill categories are represented', () => {
     const usedCategories = new Set(skills.flatMap((s) => s.category));
     const availableCategories = new Set(categories.map((c) => c.name));

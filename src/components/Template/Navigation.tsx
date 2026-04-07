@@ -7,21 +7,8 @@ import routes from '@/data/routes';
 
 import Hamburger from './Hamburger';
 import ThemeToggle from './ThemeToggle';
-import { MoonIcon, SunIcon } from '@/components/Icons';
-import { useEffect, useState } from 'react';
 
 export default function Navigation() {
-  const [isDark, setIsDark] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    const stored = window.localStorage.getItem('theme');
-    if (stored === 'light' || stored === 'dark') {
-      setIsDark(stored === 'dark');
-    } else {
-      setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches);
-    }
-  }, []);
-
   const pathname = usePathname();
 
   const isActive = (path: string) => {

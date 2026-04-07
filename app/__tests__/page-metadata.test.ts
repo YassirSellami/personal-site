@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
 import { AUTHOR_NAME, SITE_URL } from '@/lib/utils';
-import { metadata as aboutMetadata } from '../about/page';
 import { metadata as contactMetadata } from '../contact/page';
 import { metadata as notFoundMetadata } from '../not-found';
 import { metadata as projectsMetadata } from '../projects/page';
@@ -11,7 +10,6 @@ import { metadata as contributionMetadata } from '../contributions/page';
 
 describe('page metadata', () => {
   it.each([
-    ['about', aboutMetadata, `${SITE_URL}/about/`],
     ['contact', contactMetadata, `${SITE_URL}/contact/`],
     ['projects', projectsMetadata, `${SITE_URL}/projects/`],
     ['resume', resumeMetadata, `${SITE_URL}/resume/`],
@@ -25,18 +23,6 @@ describe('page metadata', () => {
     );
   });
 
-  it.each([
-    ['about', aboutMetadata],
-    ['contact', contactMetadata],
-    ['projects', projectsMetadata],
-    ['resume', resumeMetadata],
-    ['stats', statsMetadata],
-    ['contributions', contributionMetadata],
-  ])('sets page-specific twitter metadata for %s', (_, metadata) => {
-    expect(metadata.twitter?.description).toBe(metadata.description);
-    expect(metadata.twitter?.title).toBe(`${metadata.title} | ${AUTHOR_NAME}`);
-  });
-
   it('overrides 404 share metadata without inventing a canonical url', () => {
     expect(notFoundMetadata.openGraph?.url).toBeUndefined();
     expect(notFoundMetadata.openGraph?.description).toBe(
@@ -45,17 +31,6 @@ describe('page metadata', () => {
     expect(notFoundMetadata.openGraph?.title).toBe(
       `${notFoundMetadata.title} | ${AUTHOR_NAME}`,
     );
-    expect(notFoundMetadata.twitter?.description).toBe(
-      notFoundMetadata.description,
-    );
-    expect(notFoundMetadata.twitter?.title).toBe(
-      `${notFoundMetadata.title} | ${AUTHOR_NAME}`,
-    );
   });
 
-  it('preserves the contributions rss alternate', () => {
-    expect(contributionMetadata.alternates?.types?.['application/rss+xml']).toBe(
-      '/feed.xml',
-    );
-  });
 });

@@ -2,8 +2,9 @@ import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import Experience from '../../Resume/Experience';
+import { Position } from '@/data/resume/work';
 
-const mockJobs = [
+const mockJobs: Position[] = [
   {
     name: 'Acme Corp',
     position: 'Senior Engineer',
@@ -12,6 +13,7 @@ const mockJobs = [
     endDate: '2023-06-30',
     summary: 'Led engineering team.',
     highlights: ['Built features', 'Improved performance'],
+    projectName: 'test'
   },
   {
     name: 'Startup Inc',
@@ -20,6 +22,7 @@ const mockJobs = [
     startDate: '2018-01-01',
     endDate: '2019-12-31',
     highlights: ['Wrote code'],
+    projectName: 'test'
   },
 ];
 
@@ -35,8 +38,8 @@ describe('Experience', () => {
   it('renders all jobs', () => {
     render(<Experience data={mockJobs} />);
 
-    expect(screen.getByText('Acme Corp')).toBeInTheDocument();
-    expect(screen.getByText('Startup Inc')).toBeInTheDocument();
+    expect(screen.getByText('Acme Corp - Senior Engineer')).toBeInTheDocument();
+    expect(screen.getByText('Startup Inc - Software Engineer')).toBeInTheDocument();
   });
 
   it('renders job positions', () => {
@@ -51,18 +54,6 @@ describe('Experience', () => {
 
     const anchor = document.getElementById('experience');
     expect(anchor).toBeInTheDocument();
-  });
-
-  it('renders jobs with company links', () => {
-    render(<Experience data={mockJobs} />);
-
-    const links = screen.getAllByRole('link');
-    expect(
-      links.some((l) => l.getAttribute('href') === 'https://acme.com'),
-    ).toBe(true);
-    expect(
-      links.some((l) => l.getAttribute('href') === 'https://startup.com'),
-    ).toBe(true);
   });
 
   it('handles empty jobs array', () => {

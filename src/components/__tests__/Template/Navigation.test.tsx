@@ -31,7 +31,7 @@ describe('Navigation', () => {
 
   it('renders the logo link to home', () => {
     render(<Navigation />);
-    const logo = screen.getByRole('link', { name: /md/i });
+    const logo = screen.getByRole('link', { name: /ys/i });
     expect(logo).toHaveAttribute('href', '/');
   });
 
@@ -39,30 +39,9 @@ describe('Navigation', () => {
     render(<Navigation />);
 
     // Should have links for About, Resume, Contributions, Stats, Contact, Projects
-    expect(screen.getByRole('link', { name: /about/i })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /resume/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /projects/i })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /contributions/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /stats/i })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /contact/i })).toBeInTheDocument();
-  });
-
-  it('marks home route as active when on homepage', () => {
-    mockPathname.mockReturnValue('/');
-    render(<Navigation />);
-
-    // About link should not be active
-    const aboutLink = screen.getByRole('link', { name: /about/i });
-    expect(aboutLink).not.toHaveClass('active');
-  });
-
-  it('marks about route as active when on about page', () => {
-    mockPathname.mockReturnValue('/about');
-    render(<Navigation />);
-
-    const aboutLink = screen.getByRole('link', { name: /about/i });
-    expect(aboutLink).toHaveClass('active');
-    expect(aboutLink).toHaveAttribute('aria-current', 'page');
   });
 
   it('marks nested routes as active', () => {

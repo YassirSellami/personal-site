@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
 
-import { aboutMarkdown } from '@/data/about';
 import { createHeadingId, createUniqueHeadingIds } from '../anchors';
 
 function getAboutSectionTitles(markdown: string): string[] {
@@ -15,7 +14,7 @@ describe('createHeadingId', () => {
     ['Some History', 'some-history'],
     ['Travel / Geography', 'travel-geography'],
     ['Research & Development', 'research-and-development'],
-    ["Yassir's Notes", 'Yassirs-notes'],
+    ["Yassir's Notes", 'yassirs-notes'],
     ['Café Crème', 'cafe-creme'],
   ])('creates stable ids for %s', (title, expected) => {
     expect(createHeadingId(title)).toBe(expected);
@@ -25,21 +24,6 @@ describe('createHeadingId', () => {
     expect(createHeadingId('!!!')).toBe('section');
   });
 
-  it('keeps the real about section ids stable', () => {
-    expect(
-      getAboutSectionTitles(aboutMarkdown).map((title) => [
-        title,
-        createHeadingId(title),
-      ]),
-    ).toEqual([
-      ['Some History', 'some-history'],
-      ['I Like', 'i-like'],
-      ['Travel / Geography', 'travel-geography'],
-      ['Fun Facts', 'fun-facts'],
-      ['I Dream Of', 'i-dream-of'],
-      ['Websites from People I Admire', 'websites-from-people-i-admire'],
-    ]);
-  });
 });
 
 describe('createUniqueHeadingIds', () => {
@@ -59,10 +43,4 @@ describe('createUniqueHeadingIds', () => {
     ]);
   });
 
-  it('produces unique, non-empty ids for the real about headings', () => {
-    const ids = createUniqueHeadingIds(getAboutSectionTitles(aboutMarkdown));
-
-    expect(ids.every((id) => id.length > 0)).toBe(true);
-    expect(new Set(ids).size).toBe(ids.length);
-  });
 });

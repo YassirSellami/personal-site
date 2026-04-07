@@ -37,9 +37,8 @@ describe('routes', () => {
     const paths = routes.map((r) => r.path);
 
     expect(paths).toContain('/');
-    expect(paths).toContain('/about');
     expect(paths).toContain('/resume');
-    expect(paths).toContain('/projects');
+    expect(paths).toContain('/contributions');
     expect(paths).toContain('/contact');
   });
 

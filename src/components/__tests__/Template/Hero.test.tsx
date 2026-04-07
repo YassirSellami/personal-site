@@ -18,38 +18,20 @@ describe('Hero', () => {
     expect(heading).toHaveTextContent("Yassir Sellami");
   });
 
-  it('renders the tagline with OpenAI and promptfoo links', () => {
-    render(<Hero />);
-
-    const openAiLink = screen.getByRole('link', { name: /openai/i });
-    expect(openAiLink).toHaveAttribute('href', 'https://openai.com');
-    expect(openAiLink).toHaveClass('hero-highlight');
-
-    const promptfooLink = screen.getByRole('link', { name: /promptfoo/i });
-    expect(promptfooLink).toHaveAttribute('href', 'https://promptfoo.dev');
-    expect(promptfooLink).toHaveClass('hero-highlight');
-  });
-
   it('displays hero chips for credentials', () => {
     render(<Hero />);
-
-    expect(screen.getByText('YC Alum')).toBeInTheDocument();
-    expect(screen.getByText('Stanford ICME')).toBeInTheDocument();
-    expect(
-      screen.getByText('Co-founded Arthena & Matroid'),
-    ).toBeInTheDocument();
+    expect(screen.getByText('Web Development')).toBeInTheDocument();
+    expect(screen.getByText('Mobile apps')).toBeInTheDocument();
+    expect(screen.getByText('Technical Architecture')).toBeInTheDocument();
+    expect(screen.getByText('Decentralized systems')).toBeInTheDocument();
   });
 
   it('renders CTA buttons with correct links', () => {
     render(<Hero />);
 
-    const aboutButton = screen.getByRole('link', { name: /about me/i });
-    expect(aboutButton).toHaveAttribute('href', '/about');
-    expect(aboutButton).toHaveClass('button-primary');
-
     const resumeButton = screen.getByRole('link', { name: /view resume/i });
     expect(resumeButton).toHaveAttribute('href', '/resume');
-    expect(resumeButton).toHaveClass('button-secondary');
+    expect(resumeButton).toHaveClass('button-primary');
   });
 
   it('has decorative background elements', () => {
