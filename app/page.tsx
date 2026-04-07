@@ -7,8 +7,7 @@ import PageWrapper from '@/components/Template/PageWrapper';
 import { currentPosition } from '@/data/resume/work';
 
 export const metadata: Metadata = {
-  description:
-  currentPosition,
+  description: currentPosition,
 };
 
 export default function HomePage() {

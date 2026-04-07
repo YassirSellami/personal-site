@@ -9,14 +9,27 @@ interface JobProps {
 }
 
 export default function Job({ data }: JobProps) {
-  const { name, position, url, startDate, endDate, summary, highlights, techStack, projectName } = data;
+  const {
+    name,
+    position,
+    url,
+    startDate,
+    endDate,
+    summary,
+    highlights,
+    techStack,
+    projectName,
+  } = data;
 
   return (
     <article className="jobs-container">
       <header>
         <span className="daterange">
           {' '}
-          <time dateTime={startDate}>{dayjs(startDate).format('MMMM YYYY')}</time> -{' '}
+          <time dateTime={startDate}>
+            {dayjs(startDate).format('MMMM YYYY')}
+          </time>{' '}
+          -{' '}
           {endDate ? (
             <time dateTime={endDate}>{dayjs(endDate).format('MMMM YYYY')}</time>
           ) : (
@@ -26,7 +39,11 @@ export default function Job({ data }: JobProps) {
         <h4>
           {name} - {position}
         </h4>
-        {projectName && <a className={'project-name'} href={url}>{projectName}</a> }
+        {projectName && (
+          <a className={'project-name'} href={url}>
+            {projectName}
+          </a>
+        )}
       </header>
       {summary ? <JobSummary summary={summary} /> : null}
       {highlights ? (

@@ -14,7 +14,9 @@ function experience() {
 
   const tick = () => {
     const birthTime = new Date(EXPERIENCE_START);
-    setExperience(((Date.now() - birthTime.getTime()) / MS_PER_YEAR).toFixed(PRECISION));
+    setExperience(
+      ((Date.now() - birthTime.getTime()) / MS_PER_YEAR).toFixed(PRECISION),
+    );
   };
 
   useEffect(() => {
@@ -35,8 +37,8 @@ export default function CurrentPosition() {
         <a href="https://gaia-x.eu" className="hero-highlight">
           Gaia-X AISBL
         </a>{' '}
-          with <span className="resume-strong">{experience()}</span> years of experience in Software
-          Engineering.
+        with <span className="resume-strong">{experience()}</span> years of
+        experience in Software Engineering.
       </p>
     </div>
   );

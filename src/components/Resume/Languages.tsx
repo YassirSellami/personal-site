@@ -1,14 +1,14 @@
-import type { Language as LanguageType } from '@/data/resume/languages';
 import Language from '@/components/Resume/Languages/Language';
-
+import type { Language as LanguageType } from '@/data/resume/languages';
 
 interface LanguagesProps {
   data: LanguageType[];
 }
 
 function getRows(languages: LanguageType[]) {
-  return languages
-    .map((language) => <Language data={language} key={language.title} />);
+  return languages.map((language) => (
+    <Language data={language} key={language.title} />
+  ));
 }
 
 export default function Languages({ data }: LanguagesProps) {

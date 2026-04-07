@@ -315,7 +315,10 @@ function buildCategories(skillsList: Skill[]): Category[] {
 
   const allColors = [...CATEGORY_COLORS, ...FALLBACK_COLORS];
 
-  if (process.env.NODE_ENV === 'development' && uniqueCategories.length > allColors.length) {
+  if (
+    process.env.NODE_ENV === 'development' &&
+    uniqueCategories.length > allColors.length
+  ) {
     console.warn(
       `[skills.ts] Warning: ${uniqueCategories.length} categories but only ${allColors.length} colors defined`,
     );

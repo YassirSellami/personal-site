@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-
-import Experience from '../../Resume/Experience';
 import { Position } from '@/data/resume/work';
+import Experience from '../../Resume/Experience';
 
 const mockJobs: Position[] = [
   {
@@ -13,7 +12,7 @@ const mockJobs: Position[] = [
     endDate: '2023-06-30',
     summary: 'Led engineering team.',
     highlights: ['Built features', 'Improved performance'],
-    projectName: 'test'
+    projectName: 'test',
   },
   {
     name: 'Startup Inc',
@@ -22,7 +21,7 @@ const mockJobs: Position[] = [
     startDate: '2018-01-01',
     endDate: '2019-12-31',
     highlights: ['Wrote code'],
-    projectName: 'test'
+    projectName: 'test',
   },
 ];
 
@@ -39,7 +38,9 @@ describe('Experience', () => {
     render(<Experience data={mockJobs} />);
 
     expect(screen.getByText('Acme Corp - Senior Engineer')).toBeInTheDocument();
-    expect(screen.getByText('Startup Inc - Software Engineer')).toBeInTheDocument();
+    expect(
+      screen.getByText('Startup Inc - Software Engineer'),
+    ).toBeInTheDocument();
   });
 
   it('renders job positions', () => {

@@ -17,7 +17,8 @@ const data: ContributionsItem[] = [
       'Data Space participants need to automate data access decisions across organizations without pre-established trust relationships while still meeting compliance, sovereignty, and data governance requirements. However, current implementations often leave a gap between what the policy requires (expressed as constraints) and how the Consumer can consistently select and present the right credentials in a standards-based way. We propose a concrete, interoperable approach to contract negotiation between a Consumer and a Provider in a Data Space where access to data or services is governed by an ODRL policy whose evaluated values are expressed as Verifiable Credential (VC) claims. The Provider publishes an ODRL Offer policy using the ODRL Verifiable Credential (ODRL-VC) Profile. During negotiation, the Consumer proves compliance by presenting the required credentials from a Wallet',
   },
   {
-    title: 'Capturing Requests and Context for ODRL-based Access and Usage Control',
+    title:
+      'Capturing Requests and Context for ODRL-based Access and Usage Control',
     url: 'https://ceur-ws.org/Vol-4093/paper5.pdf',
     date: '2025-11-03',
     authors: [
@@ -35,9 +36,7 @@ const data: ContributionsItem[] = [
     title: 'ODRL VC Profile',
     url: 'https://gitlab.com/gaia-x/lab/policy-reasoning/odrl-vc-profile',
     date: '2024-02-05',
-    authors: [
-      'Yassir Sellami'
-    ],
+    authors: ['Yassir Sellami'],
     description:
       'The main intention of this ODRL Profile is to be able to refer in a clear and precise way to verifiable credential claims in an ODRL Policy. This would give assignors of policies a way to enforce policies using trustworthy and verifiable claims from an assignee, and in doing so having more trust and confidence in the enforcement of the policy.',
   },
@@ -45,10 +44,7 @@ const data: ContributionsItem[] = [
     title: 'Gaia-X and the Policy Reasoning Engine',
     url: 'https://gaia-x.eu/gaia-x-and-the-policy-reasoning-engine/',
     date: '2023-12-07',
-    authors: [
-      'Julien Vanwambeke',
-      'Yassir Sellami'
-    ],
+    authors: ['Julien Vanwambeke', 'Yassir Sellami'],
     description:
       'The Policy Reasoning Engine is a Gaia-X library helping service providers or catalogue providers to go further into machine processing, parsing complex policies and usage intentions automatically to add value for the consumers.',
   },

@@ -33,12 +33,12 @@ Work through these steps in order for the smoothest experience.
 
 ### Step 3: Resume
 
-| What to change      | File                         |
-| ------------------- | ---------------------------- |
-| Work experience     | `src/data/resume/work.ts`    |
-| Education           | `src/data/resume/degrees.ts` |
-| Skills & categories | `src/data/resume/skills.ts`  |
-| Certifications (optional)  | `src/data/resume/certifications.ts` |
+| What to change            | File                                |
+| ------------------------- | ----------------------------------- |
+| Work experience           | `src/data/resume/work.ts`           |
+| Education                 | `src/data/resume/degrees.ts`        |
+| Skills & categories       | `src/data/resume/skills.ts`         |
+| Certifications (optional) | `src/data/resume/certifications.ts` |
 
 ### Step 4: Projects
 

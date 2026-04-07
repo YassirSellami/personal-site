@@ -8,7 +8,11 @@ interface PageMetadataOptions {
   path?: `/${string}`;
 }
 
-export function createPageMetadata({ title, description, path }: PageMetadataOptions): Metadata {
+export function createPageMetadata({
+  title,
+  description,
+  path,
+}: PageMetadataOptions): Metadata {
   const absoluteUrl = path ? new URL(path, SITE_URL).toString() : undefined;
   const pageTitle = `${title} | ${AUTHOR_NAME}`;
 

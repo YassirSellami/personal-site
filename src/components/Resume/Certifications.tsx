@@ -1,6 +1,5 @@
-import type { Certification as CertificationType } from '@/data/resume/certifications';
 import Certification from '@/components/Resume/Certifications/Certification';
-
+import type { Certification as CertificationType } from '@/data/resume/certifications';
 
 interface CertificationsProps {
   data: CertificationType[];
@@ -16,7 +15,9 @@ function getRows(certifications: CertificationType[]) {
       else if (a.number < b.number) ret = -1;
       return ret;
     })
-    .map((certification) => <Certification data={certification} key={certification.title} />);
+    .map((certification) => (
+      <Certification data={certification} key={certification.title} />
+    ));
 }
 
 export default function Certifications({ data }: CertificationsProps) {

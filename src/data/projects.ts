@@ -18,7 +18,7 @@ const data: Project[] = [
     desc: 'Rayon des Arts Textiles is a leader in direct embroidery marking on all types of materials, including fabrics, textiles, and leather. Personalize your items with Rayon des Arts Textiles, whether it’s a ready-to-wear collection or clothing for sports clubs or professional use. Take advantage of it and keep your unique touch everywhere!',
     tech: ['HTML', 'CSS', 'JS', 'Mobirise'],
     featured: true,
-  }
+  },
 ];
 
 export default data;

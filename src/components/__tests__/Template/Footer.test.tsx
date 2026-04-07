@@ -14,7 +14,7 @@ describe('Footer', () => {
   it('displays the name and role', () => {
     render(<Footer />);
 
-    expect(screen.getByText("Yassir Sellami")).toBeInTheDocument();
+    expect(screen.getByText('Yassir Sellami')).toBeInTheDocument();
   });
 
   it('displays the current year in copyright', () => {

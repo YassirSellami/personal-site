@@ -15,7 +15,7 @@ describe('Hero', () => {
     render(<Hero />);
 
     const heading = screen.getByRole('heading', { level: 1 });
-    expect(heading).toHaveTextContent("Yassir Sellami");
+    expect(heading).toHaveTextContent('Yassir Sellami');
   });
 
   it('displays hero chips for credentials', () => {

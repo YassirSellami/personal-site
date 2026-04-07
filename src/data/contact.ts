@@ -1,9 +1,9 @@
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
+import { faGitlab } from '@fortawesome/free-brands-svg-icons/faGitlab';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons/faLinkedinIn';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons/faEnvelope';
 import { faVcard } from '@fortawesome/free-regular-svg-icons/faVcard';
-import { faGitlab } from '@fortawesome/free-brands-svg-icons/faGitlab';
 
 export interface ContactItem {
   link: string;

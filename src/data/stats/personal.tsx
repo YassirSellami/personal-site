@@ -21,7 +21,9 @@ function Age() {
 
   const tick = () => {
     const birthTime = new Date(BIRTH_DATE);
-    setAge(((Date.now() - birthTime.getTime()) / MS_PER_YEAR).toFixed(AGE_PRECISION));
+    setAge(
+      ((Date.now() - birthTime.getTime()) / MS_PER_YEAR).toFixed(AGE_PRECISION),
+    );
   };
 
   useEffect(() => {

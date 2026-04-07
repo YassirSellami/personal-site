@@ -37,6 +37,7 @@ export default function ContactPage() {
           </div>
 
           <div className={'qrcode'}>
+            {/* biome-ignore lint/performance/noImgElement: Using native img to avoid next/image runtime overhead for static export */}
             <img
               src="/images/qrcode.png"
               alt="Use contacts above instead"

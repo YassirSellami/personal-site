@@ -2,11 +2,11 @@ import { describe, expect, it } from 'vitest';
 
 import { AUTHOR_NAME, SITE_URL } from '@/lib/utils';
 import { metadata as contactMetadata } from '../contact/page';
+import { metadata as contributionMetadata } from '../contributions/page';
 import { metadata as notFoundMetadata } from '../not-found';
 import { metadata as projectsMetadata } from '../projects/page';
 import { metadata as resumeMetadata } from '../resume/page';
 import { metadata as statsMetadata } from '../stats/page';
-import { metadata as contributionMetadata } from '../contributions/page';
 
 describe('page metadata', () => {
   it.each([
@@ -32,5 +32,4 @@ describe('page metadata', () => {
       `${notFoundMetadata.title} | ${AUTHOR_NAME}`,
     );
   });
-
 });

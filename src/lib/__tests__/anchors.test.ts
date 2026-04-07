@@ -2,13 +2,6 @@ import { describe, expect, it } from 'vitest';
 
 import { createHeadingId, createUniqueHeadingIds } from '../anchors';
 
-function getAboutSectionTitles(markdown: string): string[] {
-  return Array.from(
-    markdown.matchAll(/^# (.+)$/gm),
-    (match) => match[1],
-  ).filter((title) => title !== 'Intro');
-}
-
 describe('createHeadingId', () => {
   it.each([
     ['Some History', 'some-history'],
@@ -23,7 +16,6 @@ describe('createHeadingId', () => {
   it('falls back when a heading has no anchor-safe characters', () => {
     expect(createHeadingId('!!!')).toBe('section');
   });
-
 });
 
 describe('createUniqueHeadingIds', () => {
@@ -42,5 +34,4 @@ describe('createUniqueHeadingIds', () => {
       'section-2',
     ]);
   });
-
 });

@@ -2,17 +2,17 @@ import type { Metadata } from 'next';
 
 import Education from '@/components/Resume/Education';
 import Experience from '@/components/Resume/Experience';
+import Languages from '@/components/Resume/Languages';
 import References from '@/components/Resume/References';
+import ResumeHeader from '@/components/Resume/ResumeHeader';
 import ResumeNav from '@/components/Resume/ResumeNav';
 import Skills from '@/components/Resume/Skills';
 import PageWrapper from '@/components/Template/PageWrapper';
 import degrees from '@/data/resume/degrees';
-import { categories, skills } from '@/data/resume/skills';
-import { work, currentPosition } from '@/data/resume/work';
-import { createPageMetadata } from '@/lib/metadata';
-import Languages from '@/components/Resume/Languages';
 import languages from '@/data/resume/languages';
-import ResumeHeader from '@/components/Resume/ResumeHeader';
+import { categories, skills } from '@/data/resume/skills';
+import { currentPosition, work } from '@/data/resume/work';
+import { createPageMetadata } from '@/lib/metadata';
 
 export const metadata: Metadata = createPageMetadata({
   title: 'Resume',

@@ -2,7 +2,7 @@ import type { Certification as CertificationType } from '@/data/resume/certifica
 
 interface CertificationProps {
   data: CertificationType;
-  key: string
+  key: string;
 }
 
 export default function Certification({ data }: CertificationProps) {

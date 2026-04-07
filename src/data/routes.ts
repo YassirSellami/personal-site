@@ -7,7 +7,7 @@ export interface Route {
 const routes: Route[] = [
   {
     index: true,
-    label: "Yassir Sellami",
+    label: 'Yassir Sellami',
     path: '/',
   },
   {
@@ -15,8 +15,8 @@ const routes: Route[] = [
     path: '/resume',
   },
   {
-   label: 'Contributions',
-   path: '/contributions',
+    label: 'Contributions',
+    path: '/contributions',
   },
   // {
   //   label: 'Stats',

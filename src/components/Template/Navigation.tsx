@@ -19,6 +19,7 @@ export default function Navigation() {
   return (
     <header className="site-header">
       <Link href="/" className="site-logo">
+        {/* biome-ignore lint/performance/noImgElement: Using native img to avoid next/image runtime overhead for static export */}
         <img
           className={'site-logo logo-text'}
           src={'/images/logo.png'}

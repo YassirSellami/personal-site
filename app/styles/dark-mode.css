@@ -56,7 +56,7 @@
 
 [data-theme='dark'] .site-logo {
   width: 100px;
-  content:url('/images/logo-dark.png');
+  content: url('/images/logo-dark.png');
 }
 
 [data-theme='dark'] .nav-link:hover {

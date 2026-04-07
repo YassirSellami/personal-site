@@ -1,6 +1,6 @@
 'use client';
-import CurrentPosition from '@/components/Template/CurrentPosition';
 import Link from 'next/link';
+import CurrentPosition from '@/components/Template/CurrentPosition';
 
 export default function ResumeHeader() {
   return (

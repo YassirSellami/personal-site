@@ -9,7 +9,7 @@ const certifications: Certification[] = [
   {
     title: 'English TOEIC',
     number: '965',
-    university: ''
+    university: '',
   },
 ];
 

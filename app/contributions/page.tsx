@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Contributions',
     description: 'Papers, Articles and other contributions.',
     path: '/contributions/',
-  })
+  }),
 };
 
 interface UnifiedItem {
@@ -38,9 +38,7 @@ function ContributionsItem({ item, showDate = true }: ContributionsItemProps) {
         </time>
       )}
       <h2 className="contributions-title">{item.title}</h2>
-      <p className="contributions-date">
-        {item.authors.join(', ')}
-      </p>
+      <p className="contributions-date">{item.authors.join(', ')}</p>
       <p className="contributions-description">{item.description}</p>
       {item.isExternal && (
         <span className="contributions-external" aria-hidden="true">
@@ -52,7 +50,12 @@ function ContributionsItem({ item, showDate = true }: ContributionsItemProps) {
 
   if (item.isExternal) {
     return (
-      <a href={item.url} target="_blank" rel="noopener noreferrer" className="contributions-item">
+      <a
+        href={item.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="contributions-item"
+      >
         {content}
       </a>
     );
@@ -108,7 +111,11 @@ export default function ContributionsPage() {
             <>
               <div className="contributions-section-label">Guides</div>
               {undated.map((item) => (
-                <ContributionsItem key={item.url} item={item} showDate={false} />
+                <ContributionsItem
+                  key={item.url}
+                  item={item}
+                  showDate={false}
+                />
               ))}
             </>
           )}

@@ -4,7 +4,7 @@
 
 // Site configuration
 export const SITE_URL = 'https://ysellami.com';
-export const AUTHOR_NAME = "Yassir Sellami";
+export const AUTHOR_NAME = 'Yassir Sellami';
 
 // Image dimension constants
 export const AVATAR_SIZE = {

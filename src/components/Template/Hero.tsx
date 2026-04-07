@@ -1,7 +1,6 @@
 import Link from 'next/link';
-
-import ThemePortrait from './ThemePortrait';
 import CurrentPosition from '@/components/Template/CurrentPosition';
+import ThemePortrait from './ThemePortrait';
 
 export default function Hero() {
   return (
@@ -15,7 +14,7 @@ export default function Hero() {
           <span className="hero-name">Yassir Sellami</span>
         </h1>
 
-        <CurrentPosition/>
+        <CurrentPosition />
 
         <div className="hero-chips">
           <span className="hero-chip">Web Development</span>

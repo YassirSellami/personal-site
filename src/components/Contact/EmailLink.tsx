@@ -30,7 +30,7 @@ const messages = [
   'just-saying-hi',
   'please-work-for-us',
   'help',
-  'admin'
+  'admin',
 ];
 
 function useInterval(callback: () => void, delay: number | null) {

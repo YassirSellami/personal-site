@@ -1,8 +1,8 @@
 import contact from '@/data/contact';
 import degrees from '@/data/resume/degrees';
+import { work } from '@/data/resume/work';
 import { AUTHOR_NAME, SITE_URL } from '@/lib/utils';
 import JsonLd from './JsonLd';
-import { work } from '@/data/resume/work';
 
 export default function PersonSchema() {
   // Extract social links for sameAs (excluding email)

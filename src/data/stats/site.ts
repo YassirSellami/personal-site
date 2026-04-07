@@ -1,5 +1,5 @@
-import { StatData } from '../../components/Stats/types';
 import dayjs from 'dayjs';
+import { StatData } from '../../components/Stats/types';
 
 const data: StatData[] = [
   {
@@ -16,7 +16,7 @@ const data: StatData[] = [
     label: 'Original work by',
     key: 'designedBy',
     link: 'https://github.com/mldangelo/personal-site/',
-    value: 'mldangelo'
+    value: 'mldangelo',
   },
 ];
 
