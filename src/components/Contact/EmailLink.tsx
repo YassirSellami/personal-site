@@ -21,16 +21,18 @@ const messages = [
   'hi',
   'bonjour',
   'hola',
-  'you-can-email-me-at-literally-anything',
-  'well, not anything. But most things',
+  'you-can-email-me',
+  'at-literally-anything',
+  'well, not anything.',
+  'but-most-things',
   'like-this',
   'or-this',
   'but not this :(',
-  'or.with.specific.topics.like',
+  'or.with.specific.topics',
   'just-saying-hi',
   'please-work-for-us',
   'help',
-  'admin',
+  'I-have-a-question',
 ];
 
 function useInterval(callback: () => void, delay: number | null) {
